@@ -16,11 +16,11 @@
 <body class="bg-light">
 
     <section class="product-shop spad page-details">
-        <div class="container">
+        <div id="app"  class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="row justify-content-center">
-                        <div class="col-lg-4 col-md-4 ">
+                        <div class="col-lg-4 col-md-4 card bg-light-white border-0 p-3 ">
                             <div class="product-pic-zoom ">
                                 <img class="product-big-img" src="img/insta-1.jpg" alt="">
                                 <div class="zoom-icon">
@@ -41,9 +41,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-8">
+                        <div class="col-lg-6 col-md-8 card bg-light-white border-0 p-3 ">
                             <div class="product-details">
-								<div class="quantity">                             
+								<div  class="quantity">                             
                                     <label class="primary-btn pd-cart w-100 text-center shadow-sm">BUY IT NOW !</label>
                                 </div>                  
                                 <h5 class="text-danger text-red font-weight-bold pb-1">Buy More Save More!</h5>                                                                          
@@ -77,39 +77,39 @@
                                 </div>
                             </div>
 
-                            <div class="mt-2" >
+                            <div class=" mt-2" >
                                 <div class="countdown-timer" id="countdown">
-                                <h6 class=" px-2 font-weight-bold mb-3 text-red">🔥 Sale ends once the timer hit zero!</h6>
+                                <h6 class=" px-2 font-weight-bold mb-3 text-red">🔥 Sale ends once the timer hit zero! </h6>
                                 <div class="box">
                                 <div class="cd-item-left">
-                                    <span>0</span>
+                                    <span>{{ time[0] }}</span>
                                 </div>
                                 <div class="cd-item-right">
-                                    <span>6</span>
+                                    <span>{{ time[1] }}</span>
                                 </div>
-                                <h6 class="text-left px-2 pt-2 text-muted">Hours</h6>
+                                <h6 class="text-left pl-4 pt-2 text-muted">Hours</h6>
                                 </div>
                                 
                                 <div class="box">
                                     <div class="cd-item-left">
-                                        <span>5</span>
+                                        <span>{{ time[2] }}</span>
                                     </div>
                                     <div class="cd-item-right">
-                                        <span>4</span>
+                                        <span>{{ time[3] }}</span>
                                     </div>
-                                    <h6 class="text-left px-2 pt-2 text-muted">Minutes</h6>
+                                    <h6 class="text-left pl-4 pt-2 text-muted">Minutes</h6>
                                 </div>
 
                                 <div class="box">
                                     <div class="cd-item-left">
-                                        <span>3</span>
+                                        <span>{{ time[4] }}</span>
                                     </div>
                                     <div class="cd-item-right">
-                                        <span>2</span>
+                                        <span>{{ time[5] }}</span>
                                     </div>
-                                    <h6 class="text-left px-2 pt-2 text-muted">Seconds</h6>
+                                    <h6 class="text-left pl-4 pt-2 text-muted">Seconds</h6>
                                 </div>
-                                    
+                                    <span class="d-none">{{count}}</span>
                             </div>
                         </div>
                     </div>
@@ -121,7 +121,66 @@
     </section>
     <!-- Product Shop Section End -->
 
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                time : ["0","0","0","0","0","0"],
+                count : 3600
+            },
+            created: function () {
+                setInterval( () => {this.timer() }, 1000)
+            },
+            methods : {
+                timer :  function timer() {
+            
+                     
+                this.count = this.count - 1;
+            if (this.count == 0 ) {
+                clearInterval(this);
+                return;
+            }else{
 
+            var seconds = this.count % 60;
+            var minutes = Math.floor(this.count / 60);
+            var hours = Math.floor(minutes / 60);
+            minutes %= 60;
+            hours %= 60;
+
+
+            if(hours <= 9 ){
+                this.time[0] = "0";
+                this.time[1] = hours.toString()[0]
+            }else{
+                this.time[0] = hours.toString()[0]
+                this.time[1] = hours.toString()[1]
+            }
+
+            if(minutes <= 9 ){
+                this.time[2] = "0";
+                this.time[3] = minutes.toString()[0]
+            }else{
+                this.time[2] = minutes.toString()[0]
+                this.time[3] = minutes.toString()[1]
+            }
+
+            if(seconds<= 9 ){
+                this.time[4] = "0";
+                this.time[5] = seconds.toString()[0]
+            }else{
+                this.time[4] = seconds.toString()[0]
+                this.time[5] = seconds.toString()[1]
+            }
+
+
+        }
+
+        }
+            }
+        })
+        
+    </script>
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -129,6 +188,7 @@
     <script src="js/jquery.zoom.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    
 </body>
 
 </html>

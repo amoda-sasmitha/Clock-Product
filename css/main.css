@@ -63,6 +63,9 @@ img {
     padding: 10px 14px;
     border-radius: 5px;
 }
+.bg-light-white{
+    background-color:  #FCFCFC !important;
+}
 
 .countdown-timer .cd-item-left {
     display: inline-block;
