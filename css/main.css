@@ -1,0 +1,97 @@
+.product-shop {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+.product-pic-zoom {
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.product-pic-zoom img {
+    min-width: 100%;
+}
+img {
+    max-width: 100%;
+}
+img {
+    vertical-align: middle;
+    border-style: none;
+}
+
+.product-pic-zoom .zoom-icon {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+
+.primary-btn {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 8px 30px;
+    color: #ffffff;
+    background: #27ae60;
+    border-radius:  0.2rem;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.text-red{
+    color: #c0392b;
+}
+.bg-gray{
+    background: rgba(216, 216, 216, 0.253);
+    border-radius:  0.2rem;
+}
+
+.countdown-timer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.box{
+    display: inline-block;  
+}
+
+.countdown-timer .cd-item-right{
+    display: inline-block;
+    background-color:#e74c3c;
+    margin-right: 35px;
+    padding: 10px 14px;
+    border-radius: 5px;
+}
+
+.countdown-timer .cd-item-left {
+    display: inline-block;
+    background-color:#e74c3c;
+    margin-right: 0px;
+    padding: 10px 14px;
+    border-radius: 5px;
+}
+
+.countdown-timer .cd-item-left span {
+    color: #ffffff;
+    font-weight: 700;
+    line-height: 40px;
+    font-size: 36px;
+}
+
+.countdown-timer .cd-item-right span {
+    color: #ffffff;
+    font-weight: 700;
+    line-height: 40px;
+    font-size: 36px;
+}
+
+.countdown-timer .cd-item p {
+    font-size: 16px;
+    color: #b2b2b2;
+    margin-bottom: 0;
+    font-weight: 400;
+    line-height: 26px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
