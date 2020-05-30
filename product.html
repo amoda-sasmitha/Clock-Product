@@ -13,14 +13,14 @@
    
 </head>
 
-<body class="bg-light">
+<body class="bg-light-white">
 
     <section class="product-shop spad page-details">
         <div id="app"  class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div class="row justify-content-center">
-                        <div class="col-lg-4 col-md-4 card bg-light-white border-0 p-3 ">
+                        <div class="col-lg-4 col-md-4 card  border-0 p-3 ">
                             <div class="product-pic-zoom ">
                                 <img class="product-big-img" src="img/insta-1.jpg" alt="">
                                 <div class="zoom-icon">
@@ -41,10 +41,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6 col-md-8 card bg-light-white border-0 p-3 ">
+                        <div class="col-lg-6 col-md-8 card  border-0 p-3 ">
                             <div class="product-details">
 								<div  class="quantity">                             
-                                    <label class="primary-btn pd-cart w-100 text-center shadow-sm">BUY IT NOW !</label>
+                                    <label data-toggle="modal" data-target="#popup"  class="primary-btn pd-cart w-100 text-center shadow-sm">BUY IT NOW !</label>
                                 </div>                  
                                 <h5 class="text-danger text-red font-weight-bold pb-1">Buy More Save More!</h5>                                                                          
                             </div>
@@ -55,29 +55,29 @@
                                     <h6 class="text-muted px-2 font-weight-bold small mb-0">for each product</h6>
                                 </div>
                                 <div class="ml-auto px-2">
-                                    <button class="btn btn-outline-primary py-1 btn-outline px-3 font-weight-bold " >Buy now !</button>
+                                    <button data-toggle="modal" data-target="#popup" class="btn btn-outline-primary py-1 btn-outline px-3 font-weight-bold " >Buy now !</button>
                                 </div>
                             </div>
                             <div class="bg-gray py-2 shadow-sm d-flex my-2" >
                                 <div>
-                                    <h6 class="text-dark px-2 font-weight-bold mb-0">2+ items for 5% off</h6>
+                                    <h6 class="text-dark px-2 font-weight-bold mb-0">4+ items for 15% off</h6>
                                     <h6 class="text-muted px-2 font-weight-bold small mb-0">for each product</h6>
                                 </div>
                                 <div class="ml-auto px-2">
-                                    <button class="btn btn-outline-primary py-1 btn-outline px-3 font-weight-bold " >Buy now !</button>
+                                    <button  data-toggle="modal" data-target="#popup" class="btn btn-outline-primary py-1 btn-outline px-3 font-weight-bold " >Buy now !</button>
                                 </div>
                             </div>
                             <div class="bg-gray py-2 shadow-sm d-flex my-2" >
                                 <div>
-                                    <h6 class="text-dark px-2 font-weight-bold mb-0">2+ items for 5% off</h6>
+                                    <h6 class="text-dark px-2 font-weight-bold mb-0">10+ items for 20% off</h6>
                                     <h6 class="text-muted px-2 font-weight-bold small mb-0">for each product</h6>
                                 </div>
                                 <div class="ml-auto px-2">
-                                    <button class="btn btn-outline-primary py-1 btn-outline px-3 font-weight-bold " >Buy now !</button>
+                                    <button data-toggle="modal" data-target="#popup"  class="btn btn-outline-primary py-1 btn-outline px-3 font-weight-bold " >Buy now !</button>
                                 </div>
                             </div>
 
-                            <div class=" mt-2" >
+                            <div class=" mt-2 pre"  v-bind:class="{ active : active }">
                                 <div class="countdown-timer" id="countdown">
                                 <h6 class=" px-2 font-weight-bold mb-3 text-red">🔥 Sale ends once the timer hit zero! </h6>
                                 <div class="box">
@@ -119,74 +119,63 @@
             </div>
         </div>
     </section>
+
+    <div class="modal fade" id="popup" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header px-2 py-1 bg-dark">
+              <h6 class="modal-title m-0 p-0 text-white" id="exampleModalLabel">Buy Now !</h6>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div id="bt" class="modal-body mt-0 pt-2  pb-3 px-3">
+              <form onsubmit="submitform(event)" id="mail" method="GET">
+                  <div class="row" >
+                    <div class="col-12">
+                        <h6 class="mt-2 small-size text-muted mb-1">Name*</h6>
+                        <input required  type="tel" id="name" class="form-control input-sm" placeholder="Enter Your Name" />
+                    </div>
+                    <div class="col-12">
+                        <h6 class="mt-2 small-size text-muted mb-1">Contact No*</h6>
+                        <input required type="text" id="contact" class="form-control input-sm" placeholder="Enter Contact No" />
+                    </div>
+                    <div class="col-12">
+                        <h6 class="mt-2 small-size text-muted mb-1">Address</h6>
+                        <input type="text" id="address" class="form-control input-sm" placeholder="Enter Your Address" />
+                    </div>
+                    <div class="col-12">
+                        <h6 class="mt-2 small-size text-muted mb-1">Email</h6>
+                        <input type="email" id="email" class="form-control input-sm" placeholder="Enter Email" />
+                    </div>
+                    <div class="col-12">
+                        <h6 class="mt-2 small-size text-muted mb-1">Quantity</h6>
+                        <input type="number" id="quantity" class="form-control input-sm" placeholder="Enter Quantity" />
+                    </div>
+                    <div class="col-12 text-right">
+                        <button type="submit"  class="btn btn-sm btn-success ml-auto mt-3 px-3" >Submit</button>
+                    </div>
+                  </div>
+              </form>
+            </div>
+            <!-- <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div> -->
+          </div>
+        </div>
+      </div>
     <!-- Product Shop Section End -->
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script>
-        var app = new Vue({
-            el: '#app',
-            data: {
-                time : ["0","0","0","0","0","0"],
-                count : 3600
-            },
-            created: function () {
-                setInterval( () => {this.timer() }, 1000)
-            },
-            methods : {
-                timer :  function timer() {
-            
-                     
-                this.count = this.count - 1;
-            if (this.count == 0 ) {
-                clearInterval(this);
-                return;
-            }else{
-
-            var seconds = this.count % 60;
-            var minutes = Math.floor(this.count / 60);
-            var hours = Math.floor(minutes / 60);
-            minutes %= 60;
-            hours %= 60;
-
-
-            if(hours <= 9 ){
-                this.time[0] = "0";
-                this.time[1] = hours.toString()[0]
-            }else{
-                this.time[0] = hours.toString()[0]
-                this.time[1] = hours.toString()[1]
-            }
-
-            if(minutes <= 9 ){
-                this.time[2] = "0";
-                this.time[3] = minutes.toString()[0]
-            }else{
-                this.time[2] = minutes.toString()[0]
-                this.time[3] = minutes.toString()[1]
-            }
-
-            if(seconds<= 9 ){
-                this.time[4] = "0";
-                this.time[5] = seconds.toString()[0]
-            }else{
-                this.time[4] = seconds.toString()[0]
-                this.time[5] = seconds.toString()[1]
-            }
-
-
-        }
-
-        }
-            }
-        })
-        
-    </script>
+    <script src="js/vue.js"></script>
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery-ui.min.js"></script>
     <script src="js/jquery.zoom.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="js/main.js"></script>
     
 </body>

@@ -17,37 +17,6 @@
     });
     
     /*------------------
-        CountDown
-    --------------------*/
-    // For demo preview
-    /*var today = new Date();
-    var dd = String(today.getDate()).padStart(2, '0');
-    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-    var yyyy = today.getFullYear();
-
-    if(mm == 12) {
-        mm = '01';
-        yyyy = yyyy + 1;
-    } else {
-        mm = parseInt(mm) + 1;
-        mm = String(mm).padStart(2, '0');
-    }
-    var timerdate = mm + '/' + dd + '/' + yyyy;
-    // For demo preview end
-
-    console.log(timerdate);*/
-    
-
-    // Use this for real timer date
-    /* var timerdate = "2020/01/01"; */
-
-	/*$("#countdown").countdown(timerdate, function(event) {
-        $(this).html(event.strftime("<div class='cd-item'><span>%D</span> <p>Days</p> </div>" + "<div class='cd-item'><span>%H</span> <p>Hrs</p> </div>" + "<div class='cd-item'><span>%M</span> <p>Mins</p> </div>" + "<div class='cd-item'><span>%S</span> <p>Secs</p> </div>"));
-    });
-*/
-       
-
-    /*------------------
 		Single Product
 	--------------------*/
 	$('.product-thumbs-track .pt').on('click', function(){
@@ -63,6 +32,48 @@
 
     $('.product-pic-zoom').zoom();
     
-    
-
 })(jQuery);
+
+function submitform(event){
+     event.preventDefault();
+     let name = $('#name').val()
+     let contact = $('#contact').val()
+     let address = $('#address').val()
+     let email = $('#email').val()
+     let quantity = $('#quantity').val()
+
+    let msg = "<h2>Form Data<h2>"
+    msg +=  `<h3>Name : ${name}<h3>`
+    msg +=  `<h3>Contact : ${contact}<h3>`
+    msg +=  `<h3>Address : ${address}<h3>`
+    msg +=  `<h3>Email : ${email}<h3>`
+    msg +=  `<h3>Quantity : ${quantity}<h3>`
+
+    $('#bt').empty();
+    $('#bt').append(`<div class="text-center py-5 my-5">
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </div>`);
+
+     Email.send({
+        Host : "smtp-relay.sendinblue.com",
+        Username : "padula.g@lucidex.tech",
+        Port : "587",
+        Password : "Wf3wdxMNPXOESV4H",
+        To : 'amoda29@gmail.com',
+        From : "padula.g@lucidex.tech",
+        Subject : "Form Data Submit",
+        Body : msg
+    }).then(
+      message => {
+        $('#bt').empty();
+        $('#bt').append(`<div class="text-center py-5 my-2">
+        <img src="/img/su.png" style="width : 10%"/>
+        <h4 class="mt-2 mb-0 font-weight-bold text-success">Successful !</h4>
+        <h6 class="mt-2 text-mute">Your form has been submitted.</h6>
+      </div>`);
+      }
+    );
+}
+

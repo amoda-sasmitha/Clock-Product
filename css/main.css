@@ -98,3 +98,19 @@ img {
     text-transform: uppercase;
     letter-spacing: 1.5px;
 }
+.active{
+    display: block !important;
+}
+
+.pre{
+    display: none;
+}
+
+.modal-header span {
+    color: #ffffff !important;
+    opacity: 1 !important;
+}
+.small-size{
+    font-size: 14px !important;
+    padding-bottom: 2px !important;
+}
