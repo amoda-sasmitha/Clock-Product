@@ -58,11 +58,11 @@ function submitform(event){
 
      Email.send({
         Host : "smtp-relay.sendinblue.com",
-        Username : "padula.g@lucidex.tech",
+        Username : "lucidexclientsangeeth@gmail.com",
         Port : "587",
-        Password : "Wf3wdxMNPXOESV4H",
+        Password : "FpygaT1A4Z8xECb7",
         To : 'amoda29@gmail.com',
-        From : "padula.g@lucidex.tech",
+        From : "lucidexclientsangeeth@gmail.com",
         Subject : "Form Data Submit",
         Body : msg
     }).then(
