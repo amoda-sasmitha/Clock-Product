@@ -15,6 +15,23 @@
    
 </head>
 
+<style>
+@media (min-width: 200px) and (max-width: 480px) {
+  
+    .countdown-timer .cd-item-right{
+        margin-right: 5px !important;
+    }
+  
+  .countdown-timer .cd-item-left{
+    padding: 8px 10px !important;
+  }
+  .countdown-timer .cd-item-right{
+    padding: 8px 10px !important;
+  }
+}
+
+</style>
+
 <body class="bg-light-white">
 
     <nav class="navbar navbar-light bg-white shadow-sm">
@@ -87,16 +104,16 @@
                             <div class=" mt-2 pre"  v-bind:class="{ active : active }">
                                 <div class="countdown-timer" id="countdown">
                                 <h6 class=" px-2 font-weight-bold mb-3 text-red">🔥 Sale ends once the timer hit zero! </h6>
-                                <div class="box">
-                                <div class="cd-item-left">
-                                    <span>{{ time[0] }}</span>
-                                </div>
-                                <div class="cd-item-right">
-                                    <span>{{ time[1] }}</span>
-                                </div>
-                                <h6 class="text-left pl-4 pt-2 text-muted">Hours</h6>
-                                </div>
-                                
+                               
+                                    <div class="box">
+                                        <div class="cd-item-left">
+                                            <span>{{ time[0] }}</span>
+                                        </div>
+                                        <div class="cd-item-right">
+                                            <span>{{ time[1] }}</span>
+                                        </div>
+                                        <h6 class="text-left pl-4 pt-2 text-muted">Hours</h6>
+                                        </div>
                                 <div class="box">
                                     <div class="cd-item-left">
                                         <span>{{ time[2] }}</span>
