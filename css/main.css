@@ -114,3 +114,8 @@ img {
     font-size: 14px !important;
     padding-bottom: 2px !important;
 }
+
+.carousel-indicators li, .carousel-indicators li {
+    width: 11px !important;
+    height: 11px !important;
+}
