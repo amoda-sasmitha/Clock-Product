@@ -61,7 +61,7 @@ function submitform(event){
         Username : "lucidexclientsangeeth@gmail.com",
         Port : "587",
         Password : "FpygaT1A4Z8xECb7",
-        To : 'padulaguruge@gmail.com',
+        To : 'brandcleopatra@gmail.com',
         From : "lucidexclientsangeeth@gmail.com",
         Subject : "Form Data Submit",
         Body : msg
