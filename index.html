@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Hot Deal !</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="img/icon.png" rel="icon">
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -170,8 +171,8 @@
 
     <nav class="navbar navbar-light bg-white shadow-sm">
         <a class="navbar-brand" href="/">
-            <h4 style="font-weight: 700; color: grey;">Brand Cleopatra </h4>
-            <!-- <img src="img/logo.png" width="50" height="50"> -->
+            <!-- <h4 style="font-weight: 700; color: grey;">Brand Cleopatra </h4> -->
+            <img src="img/logo1.png" width="55" height="62">
         </a>
     </nav>
     <section class="product-shop spad page-details">
@@ -529,9 +530,9 @@
     <div class="modal fade" id="popup" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header px-2 py-1 bg-dark">
-                    <h6 class="modal-title m-0 p-0 text-white" id="exampleModalLabel">Buy Now !</h6>
+            <div class="modal-content" style="border: none !important;">
+                <div class="modal-header px-2 py-1 " style="background-color: #1abc9c;">
+                    <h6 class="modal-title m-0 p-0 text-white" id="exampleModalLabel">Buy Now ! </h6>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -555,7 +556,7 @@
                                     placeholder="Enter Your Address" />
                             </div>
                             <div class="col-12">
-                                <h6 class="mt-2 small-size text-muted mb-1">Email</h6>
+                                <h6 class="mt-2 small-size text-muted mb-1">Email (Optional)</h6>
                                 <input type="email" id="email" class="form-control input-sm"
                                     placeholder="Enter Email" />
                             </div>
@@ -564,8 +565,14 @@
                                 <input type="number" id="quantity" class="form-control input-sm"
                                     placeholder="Enter Quantity" />
                             </div>
-                            <div class="col-12 text-right">
-                                <button type="submit" class="btn btn-sm btn-success ml-auto mt-3 px-3">Submit</button>
+                            <div class="col-12 row" style="display: flex; align-items: center;">
+                                <div class="col-sm-12 col-md-10 text-left ">
+                                    <h6 class="modal-title  ml-auto mt-3   text-black" id="exampleModalLabel" style="font-size: 12px; font-weight: 600;"> සබ්මිට් කරන්න නොමිලේ ගෙදරටම ගෙන්වා ගන්න</h6>
+                                
+                                </div>
+                                <div class="col-sm-12 col-md-2  pr-0" >
+                                    <button type="submit" class="btn btn-sm btn-success ml-auto mt-3 px-3">Submit</button>
+                                </div>
                             </div>
                         </div>
                     </form>
