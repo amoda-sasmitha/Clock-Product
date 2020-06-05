@@ -57,10 +57,13 @@ function submitform(event){
   </div>`);
 
      Email.send({
-        Host : "smtp-relay.sendinblue.com",
-        Username : "lucidexclientsangeeth@gmail.com",
+        // Host : "smtp-relay.sendinblue.com",
+        Host : "smtp.mailgun.org",  //maiil gun
+        // Username : "lucidexclientsangeeth@gmail.com",
+        Username : "postmaster@sandbox9c534e2d0ddf4c2682f7136c3a174bc3.mailgun.org",
         Port : "587",
-        Password : "FpygaT1A4Z8xECb7",
+        Password : "9ada06242d1ffb1d0bf5e355d5d92af9-a2b91229-886763b0", //maiil gun
+        // Password : "FpygaT1A4Z8xECb7",
         To : 'brandcleopatra@gmail.com',
         From : "lucidexclientsangeeth@gmail.com",
         Subject : "Form Data Submit",
