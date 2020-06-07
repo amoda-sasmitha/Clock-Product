@@ -41,13 +41,7 @@ function submitform(event){
      let address = $('#address').val()
      let email = $('#email').val()
      let quantity = $('#quantity').val()
-
-    let msg = "<h2>Form Data<h2>"
-    msg +=  `<h3>Name : ${name}<h3>`
-    msg +=  `<h3>Contact : ${contact}<h3>`
-    msg +=  `<h3>Address : ${address}<h3>`
-    msg +=  `<h3>Email : ${email}<h3>`
-    msg +=  `<h3>Quantity : ${quantity}<h3>`
+     let data = { name : name , contact : contact , address : address , email : email , quantity : quantity };
 
     $('#bt').empty();
     $('#bt').append(`<div class="text-center py-5 my-5">
@@ -56,24 +50,23 @@ function submitform(event){
     </div>
   </div>`);
 
-     Email.send({
-        Host : "smtp-relay.sendinblue.com",
-        Username : "lucidexclientsangeeth@gmail.com",
-        Port : "587",
-        Password : "FpygaT1A4Z8xECb7",
-        To : 'brandcleopatra@gmail.com',
-        From : "lucidexclientsangeeth@gmail.com",
-        Subject : "Form Data Submit",
-        Body : msg
-    }).then(
-      message => {
-        $('#bt').empty();
-        $('#bt').append(`<div class="text-center py-5 my-2">
-        <img src="/img/su.png" style="width : 10%"/>
-        <h4 class="mt-2 mb-0 font-weight-bold text-success">Successful !</h4>
-        <h6 class="mt-2 text-mute">Your form has been submitted.</h6>
-      </div>`);
-      }
-    );
+  $.ajax({
+    type: 'post',
+    url: 'mail.php',
+    data: data,
+    success: function (data) {
+      console.log(data);
+    }
+  });
+
+  setTimeout(function() {
+    $('#bt').empty();
+    $('#bt').append(`<div class="text-center py-5 my-2">
+    <img src="/img/su.png" style="width : 10%"/>
+    <h4 class="mt-2 mb-0 font-weight-bold text-success">Successful !</h4>
+    <h6 class="mt-2 text-mute">Your form has been submitted.</h6>
+  </div>`);
+  }, 2000 );
+  
 }
 
